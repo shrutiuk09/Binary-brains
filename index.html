@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skybright Travels</title>
+  <style>
+    body {
+      font-family: Californian FB
+      , sans-serif;
+      margin: 0; padding: 0;
+      background-color: #efe1e7;
+    }
+    header, footer {
+      background-color: #efe1e7
+      ;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+      background-color: #efe1e7;
+    }
+    h2 {
+      color: #680341;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+    }
+    .search-section {
+      margin-bottom: 2rem;
+    }
+    .booking-summary {
+      background-color: #efe1e7;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 style="color:#4d0230;">Skybright Travels </h1>
+  </header>
+  <header>
+    <img src="C:/Users/rahul/OneDrive/Desktop/Screenshot 2025-03-21 183237.png" ></header>
+
+
+  <div class="container">
+
+    
+    <!-- Tabs (for UI switching - not functional yet) -->
+    <div>
+      <button onclick="showSection('flight')">Flights</button>
+      <button onclick="showSection('hotel')">Hotels</button>
+      <button onclick="showSection('car')">Car Rentals</button>
+    </div>
+
+    <!-- Flight Booking -->
+    <div class="search-section" id="flight-section">
+      <h2>Search Flights</h2>
+      <form>
+        <label>From:</label>
+        <input type="text" placeholder="City or Airport" required />
+        <label>To:</label>
+        <input type="text" placeholder="City or Airport" required />
+        <label>Departure Date:</label>
+        <input type="date" required />
+        <label>Return Date:</label>
+        <input type="date" />
+        <label>Passengers:</label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3+</option>
+        </select>
+        <button type="submit">Search Flights</button>
+      </form>
+    </div>
+
+    <!-- Hotel Booking -->
+    <div class="search-section" id="hotel-section" style="display:none;">
+      <h2>Search Hotels</h2>
+      <form>
+        <label>Destination:</label>
+        <input type="text" placeholder="City or Hotel Name" required />
+        <label>Check-in Date:</label>
+        <input type="date" required />
+        <label>Check-out Date:</label>
+        <input type="date" required />
+        <label>Guests:</label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3+</option>
+        </select>
+        <button type="submit">Search Hotels</button>
+      </form>
+    </div>
+
+    <!-- Car Rental Booking -->
+    <div class="search-section" id="car-section" style="display:none;">
+      <h2>Search Car Rentals</h2>
+      <form>
+        <label>Pickup Location:</label>
+        <input type="text" placeholder="City or Airport" required />
+        <label>Pickup Date:</label>
+        <input type="date" required />
+        <label>Drop-off Date:</label>
+        <input type="date" required />
+        <button type="submit">Search Cars</button>
+      </form>
+    </div>
+
+    <!-- Booking Summary -->
+    <div class="booking-summary">
+      <h2>Your Booking Summary</h2>
+      <p>No bookings yet.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p style="color:black;">&copy; 2025 Skybright Travels. All rights reserved.</p>
+  </footer>
+
+  <!-- Script to toggle sections -->
+  <script>
+    function showSection(section) {
+      document.getElementById('flight-section').style.display = section === 'flight' ? 'block' : 'none';
+      document.getElementById('hotel-section').style.display = section === 'hotel' ? 'block' : 'none';
+      document.getElementById('car-section').style.display = section === 'car' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
